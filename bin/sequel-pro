@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+require 'optparse'
+require 'plist'
+
+args = {}
+OptionParser.new do |opts|
+  opts.banner = "Usage: sequel-pro [options]"
+  %w[host port user password database].each do |arg|
+    opts.on("--#{arg}=", "[#{arg}]") do |v|
+      args[arg.to_sym] = v
+    end
+  end
+end.parse!
+
+spf = {
+  "ContentFilters" => {},
+  "auto_connect" => true,
+  "data" => {
+    "connection" => {
+      "database" => args[:database],
+      "host" => "127.0.0.1",
+      "kcid" => "96137217976533380",
+      "name" => "Tmp Caldecott",
+      "password" => args[:password],
+      "port" => args[:port],
+      "rdbms_type" => "mysql",
+      "sslCACertFileLocation" => "",
+      "sslCACertFileLocationEnabled" => 0,
+      "sslCertificateFileLocation" => "",
+      "sslCertificateFileLocationEnabled" => 0,
+      "sslKeyFileLocation" => "",
+      "sslKeyFileLocationEnabled" => 0,
+      "type" => "SPTCPIPConnection",
+      "useSSL" => 0,
+      "user" => args[:user]
+    }
+  },
+  "encrypted" => false,
+  "format" => "connection",
+  "queryFavorites" => [],
+  "queryHistory" => [],
+  "rdbms_type" => "mysql",
+  "rdbms_version" => "5.5.15",
+  "version" => 1
+}.to_plist
+
+File.open('/tmp/sequel-pro.spf', 'w') { |file| file.write(spf) }
+system('open /tmp/sequel-pro.spf')
+print "Press Ctrl-C to exit...\n"
+wait = true
+trap("INT") { wait = false }
+while wait
+end
+
