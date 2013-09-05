@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Omar Reiss"]
   s.email       = ["dev@innovationfactory.eu"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{Gives you a binary which can be used to add tunnel clients to CF. Currently the only available tunnel client is Sequel Pro. Feel free to contribute and add more clients.}
+  s.summary     = %q{Gives you a binary which can be used to add tunnel clients to CF.}
+  s.description = %q{Currently the only available tunnel client is Sequel Pro. Feel free to contribute and add more clients.}
 
   s.rubyforge_project = "cf-tunnel-clients"
 
@@ -20,5 +20,5 @@ Gem::Specification.new do |s|
 
   # specify any dependencies here; for example:
   # s.add_development_dependency "rspec"
-  # s.add_runtime_dependency "rest-client"
+  s.add_runtime_dependency "plist"
 end
