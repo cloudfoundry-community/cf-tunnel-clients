@@ -2,10 +2,10 @@
 require 'fileutils'
 
 CF_CLIENTS_FILE = File.expand_path("~/.cf/tunnel-clients.yml")
-SEQUEL_PRO = <<YAML
+TUNNEL_CLIENTS = <<YAML
 mysql:
   'sequel-pro': "--host=${host} --port=${port} --user=${user} --password=${password} --database=${name}"
 YAML
 
 FileUtils.touch(CF_CLIENTS_FILE) # Creates clients.yml if it doesn't exist yet
-File.open(CF_CLIENTS_FILE, "w") { |f| f.write(SEQUEL_PRO) }
+File.open(CF_CLIENTS_FILE, "w") { |f| f.write(TUNNEL_CLIENTS) }
