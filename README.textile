@@ -11,4 +11,4 @@ If you would like to add another client, you can contribute a binary and referen
 
 h3. Usage
 
-After installing the gem, simply type <tt>install-tunnel-clients<tt> in your terminal and hit enter. The available tunnel clients should now be added to the <tt>.cf</tt> directory and show up in your list of available clients when using the <tt>cf tunnel [service_name]</tt> command.
+After installing the gem, simply type <tt>install-tunnel-clients</tt> in your terminal and hit enter. The available tunnel clients should now be added to the <tt>.cf</tt> directory and show up in your list of available clients when using the <tt>cf tunnel [service_name]</tt> command.
