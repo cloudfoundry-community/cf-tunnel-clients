@@ -7,7 +7,7 @@ This gem adds custom tunnel clients to the CF CLI.
 The currently available clients are:
 * Sequel Pro
 
-If you would like to add another client, you can contribute a binary and reference it in <tt>bin/install-tunnel-clients</tt>
+If you would like to add another client, you can contribute a binary and add it to <tt>config/available_tunnel_clients.yml</tt>
 
 h3. Usage
 
